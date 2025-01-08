@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #ffe4c4;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flap {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #ffb6c1;
+    top: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform-origin: top center;
+    transition: transform 0.8s ease-in-out;
+}
+
+.card {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.8s ease-in-out;
+}
+
+button {
+    padding: 10px 15px;
+    background: #ff7f50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff6347;
+}
+
+.confetti-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%; /* Début dans la moitié inférieure de l’enveloppe */
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: pop-out 1.5s ease forwards;
+}
+
+@keyframes pop-out {
+    25% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-200px) scale(0.8);
+        opacity: 0;
+    }
+}
+
